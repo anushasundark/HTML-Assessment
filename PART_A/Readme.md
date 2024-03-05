@@ -16,7 +16,7 @@ To run the Food Ordering System locally, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone :https://github.com/anushasundark/HTML-aseessment/edit/main/PART_A
+     https://github.com/anushasundark/HTML-Assessment
      ```
 2. Open the project in your preferred code editor.
 
