@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Ordering System</title>
+    <style>
+        * {
+            font-family: 'Calibri', sans-serif;
+            padding: 5px;
+            margin: 0;
+        }
+
+        header, footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px; 
+        }
+
+        nav {
+            background-color: #eee;
+            padding: 5px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #logo {
+            width: 100px;
+            height: 100px;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .menu-item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.05);
+        }
+
+        .menu-item img {
+            max-width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .menu-item-details {
+            padding: 10px;
+        }
+
+        .cart {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        section {
+            margin-top: 20px;
+            float: right; 
+            width: 45%;
+            padding: 10px; 
+            box-sizing: border-box;
+        }
+
+        h3, h2 {
+            margin-bottom: 10px;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            clear: both; 
+            margin-top: 20px;
+        }
+
+        .copyright {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div>
+            <img src="C:\Users\Anusha\Downloads\food.jpg" id="logo" alt="Logo" >
+            <h1>Food Ordering System</h1>
+        </div>
+    </header>
+
+    <nav>
+        <a href="./index.html">Home</a> |
+        <a href="./about.html">About Us</a> |
+        <a href="./contact.html">Contact</a> |
+        <a href="./menu.html">Menu</a> |
+        <a href="./order.html">Order</a>
+    </nav>
+
+    <main>
+        <h2>Explore Our Delicious Menu</h2>
+	<div class="menu">
+            <div class="menu-item">
+                <img src="C:\Users\Anusha\Downloads\burger1.jpg" alt="Food Item 1">
+                <div class="menu-item-details">
+                    <h3>Burger</h3>
+                    <p>Classic chicken burger with fresh vegetables and special sauce.</p>
+                    <p> ₹100</p>
+                    <button onclick="addToCart('Burger', 100)">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="C:\Users\Anusha\Downloads\pasta.jpg" alt="Food Item 2">
+                <div class="menu-item-details">
+                    <h3>Pasta</h3>
+                    <p>Spaghetti with tomato sauce, meatballs, and grated cheese.</p>
+                    <p> ₹70</p>
+                    <button onclick="addToCart('Pasta', 70)">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="C:\Users\Anusha\Downloads\biriyani.jpg" alt="Food Item 3">
+                <div class="menu-item-details">
+                    <h3>Chicken Biryani</h3>
+                    <p>Chicken biryani with spices, basmati rice, and raita.</p>
+                    <p> ₹120</p>
+                    <button onclick="addToCart('Chicken Biryani', 120)">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src= "C:\Users\Anusha\Downloads\chilli chiken.jpg" alt="Food Item 4">
+                <div class="menu-item-details">
+                    <h3>Chilli Chicken</h3>
+                    <p>Chicken in tomato sauce, chapathi, and with mayonnaise.</p>
+                    <p> ₹150</p>
+                    <button onclick="addToCart('Chilli Chicken', 150)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart">
+            <h2>Shopping Cart</h2>
+            <ul id="cart-items"></ul>
+        </div>
+
+        <form id="order-form">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <button type="submit">Place Order</button>
+        </form>
+
+        <p>Enjoy a hassle-free food ordering experience with our easy-to-use online ordering system. Simply browse our menu, add your favorite items to the cart, and place your order. We'll take care of the rest!</p>
+    </main>
+
+    <section>
+        <h2>About Us</h2>
+        <p>Welcome to Food Ordering System, where we believe in delivering not just food but an experience. Our commitment is to provide you with delicious and high-quality meals, crafted with passion and served with a smile.</p>
+        <p>At our Food Ordering System, we prioritize customer satisfaction and strive to bring you a diverse menu filled with flavors that cater to every palate. Join us on a culinary journey where each dish tells a story of dedication and love for good food.</p>
+        <h3>Why Choose Us?</h3>
+        <ul>
+            <li>Quality Ingredients</li>
+            <li>Expert Chefs</li>
+            <li>Fast Delivery</li>
+            <li>Customized Orders</li>
+        </ul>
+        <h3>Other Delicious Options:</h3>
+        <ol>
+            <li>Seafood Platter</li>
+            <li>Veggie Delight Pizza</li>
+            <li>Chocolate Lava Cake</li>
+            <li>Refreshing Lemonade</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Contact Us</h2>
+        <p>Have a question or feedback? We'd love to hear from you! Please use the form below to get in touch, and we'll respond as soon as possible.</p>
+
+        <form id="contact-form">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer class="copyright">
+        <p>&copy; 2024 Food Ordering System. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
