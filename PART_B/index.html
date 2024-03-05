@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Portal</title>
+    <style>
+        * {
+            font-family: 'Arial', sans-serif;
+            color: #333; 
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        header, button {
+            background-color: #13b819;
+            padding: 1px;
+        }
+
+        button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+
+        nav {
+            background-color: #f0f0f0;
+            padding: 5px;
+        }
+
+        .col {
+            background-color: #f0f0f0; 
+            padding: 20px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        #imp {
+            font-weight: bold;
+        }
+
+        a {
+            padding: 10px; 
+            color: #13b819;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <p>
+            <h1>Sports Portal: Scores, News, and Updates</h1>
+            <button>Log In</button>
+        </p>
+    </header>
+    <nav>
+        <p>
+            <a href="#">Football</a> |
+            <a href="#">Basketball</a> |
+            <a href="#">Cricket</a>
+        </p>
+    </nav>
+    <p>Stay updated with the latest scores, news, and updates from the world of sports. Whether it's football, basketball, cricket, or any other sport, our portal provides comprehensive coverage to keep you in the loop.</p>
+    <div class="container">
+        <div class="col">
+            <h2>Football</h2>
+            <p><span id="imp">Latest Scores: </span>Check out the recent scores and highlights from football matches around the globe.</p>
+            <p><span id="imp">Top Leagues: </span>Stay informed about major leagues like EPL, La Liga, Serie A, and more.</p>
+            <p><span id="imp">Player Spotlight: </span>Discover in-depth profiles and achievements of your favorite football players.</p>
+            <p><span id="imp">Upcoming Events: </span>Find information on upcoming football tournaments and events.</p>
+        </div>
+        <div class="col">
+            <h2>Basketball</h2>
+            <p><span id="imp">Game Highlights: </span>Watch exciting highlights and key moments from recent basketball games.</p>
+            <p><span id="imp">NBA Coverage: </span>Stay updated on the NBA with scores, trades, and player updates.</p>
+            <p><span id="imp">Team Rankings: </span>Explore the current rankings of basketball teams in different leagues.</p>
+            <p><span id="imp">Exclusive Interviews: </span>Read interviews with basketball players and coaches.</p>
+        </div>
+        <div class="col">
+            <h2>Cricket</h2>
+            <p><span id="imp">Live Updates: </span>Get live ball-by-ball updates during cricket matches.</p>
+            <p><span id="imp">International Cricket: </span>Follow international cricket series and tournaments.</p>
+            <p><span id="imp">Player Statistics: </span>Access detailed statistics of cricket players from various teams.</p>
+            <p><span id="imp">Cricket News: </span>Read the latest news and insights from the world of cricket.</p>
+        </div>
+    </div>
+</body>
+</html>
